@@ -96,7 +96,7 @@ router.get('/summary', function (req, res) {
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/skils', function (req, res) {
+router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('skills', {
     // ↙ сюди вводимо JSON дані
@@ -1227,6 +1227,16 @@ router.get('/bio', function (req, res) {
   
 	//            ↙ cюди вводимо назву файлу з сontainer
 	res.render('bootstrap', {
+		layout: 'basic'
+	})})
+
+  // ================================================================
+
+  router.get('/bootstrap2', function (req, res) {
+	// res.render генерує нам HTML сторінку
+  
+	//            ↙ cюди вводимо назву файлу з сontainer
+	res.render('bootstrap2', {
 		layout: 'basic'
 	})})
 
