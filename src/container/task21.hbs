@@ -3,37 +3,113 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/car"
 --}}
 
-<div>
-<h1>{{heading.main.title}}</h1>
-    <p>{{heading.main.text}}</p>
-    <button type="button" class="btn btn-primary">{{heading.main.button_text.solid}}</button>
-    <button>{{heading.main.button_text.outline}}</button>
-    
-    <h2>{{heading.second.title}}</h2>
-    <p>{{heading.second.text}}</p>
-    <button>{{heading.second.button_text.solid}}</button>
-    <button>{{heading.second.button_text.outline}}</button>
-    
-    <h2>{{heading.subblock.title}}</h2>
-    <p>{{heading.subblock.text}}</p>
-    <button>{{heading.subblock.button_text.solid}}</button>
-    <button>{{heading.subblock.button_text.outline}}</button>
-    
-    <h2>{{nested_display.title}}</h2>
-    <h3>{{nested_display.children_display.title}}</h3>
-    <p>{{nested_display.children_display.text}}</p>
-    <button>{{nested_display.children_display.button.text}}</button>
-    <p>{{nested_display.header_text}}</p>
-    <button>{{nested_display.button.text}}</button>
-    
-    <h2>{{paragraph.title}}</h2>
-    <p>{{paragraph.text}}</p>
-    <ul>
-      {{#each paragraph.list_name}}
-        <li><a href="{{this.url}}">{{this.text}}</a></li>
-      {{/each}}
-    </ul>
-    <button><a href="{{paragraph.button.url}}">{{paragraph.button.text}}</a></button>
-</div>
+<main>
+  <div class='card'>
+    <div class='card-body'> 
+      <h1>H1 Heading</h1>
+      <p>Paragraph</p>
+      <div>
+        <button class="btn btn-primary">Primary</button>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-outline-primary">Outline Primary</button>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+  <div class='card'>
+    <div class='card-body'> 
+      <h2>H2 Heading second</h2>
+      <p>Paragraph</p>
+      <div>
+        <button class="btn btn-secondary">Secondary</button>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-outline-secondary">Outline Secondary</button>
+      </div>
+    </div>
+  </div>
+
+<br>
+
+  <div class='card'>
+    <div class='card-body'> 
+      <h3>H3 Heading subblock</h3>
+      <p>Paragraph</p>
+      <div>
+        <button class="btn btn-dark">Dark</button>
+      </div>
+      <br>
+      <div>
+        <button class="btn btn-outline-dark">Outline Dark</button>
+      </div>
+    </div>
+  </div>
+
+<br>
+<br>
+<br>
+
+  <div class='card'>
+    <div class='card-body'> 
+      <div class="display-1"> <b>Display 1 nested </b></div>
+        <div class='card'> 
+          <div class="display-4"> <b>Display 4 children </b></div>
+            <div class='card-body'>
+              <p>Paragraph</p>
+              <div>
+                <button class="btn btn-outline-warning">Warning</button>
+                <br>
+              </div>
+            </div>
+        </div>
+
+      <br>
+      <div>
+        <h6>H6 Heading</h6>
+        <button class="btn btn-info text-light">Info</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div class='card'>
+    <div class='card-body'> 
+      <p class="text-uppercase">Paragraph</p>
+      <p class="text-lowercase">Paragraph</p>
+
+      <button class="btn btn-link">
+        <span>Link</span>
+      </button>
+    </div>
+
+
+    <div class='card'> 
+        <ul>
+          <li>
+            <button class="btn btn-link">
+              <span>Link</span>
+            </button>
+          </li>
+          <li>
+            <button class="btn btn-link">
+              <span>Link</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</main>
 
 
