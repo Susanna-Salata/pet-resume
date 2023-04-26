@@ -214,7 +214,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-	  layout: 'big',
+	//   layout: 'big',
 	  
 	  page: {
 		title: 'Resume | Work',
@@ -1222,21 +1222,31 @@ router.get('/bio', function (req, res) {
    
   // ================================================================
 
-  router.get('/bootstrap', function (req, res) {
-	// res.render генерує нам HTML сторінку
-  
-	//            ↙ cюди вводимо назву файлу з сontainer
-	res.render('bootstrap', {
-		layout: 'basic'
-	})})
-
-  // ================================================================
-
   router.get('/bootstrap2', function (req, res) {
 	// res.render генерує нам HTML сторінку
   
 	//            ↙ cюди вводимо назву файлу з сontainer
 	res.render('bootstrap2', {
+		layout: 'basic'
+	})})
+
+  // ================================================================
+
+  router.get('/bootstrap3', function (req, res) {
+	// res.render генерує нам HTML сторінку
+  
+	//            ↙ cюди вводимо назву файлу з сontainer
+	res.render('bootstrap3', {
+		layout: 'basic'
+	})})
+
+  // ================================================================
+
+  router.get('/bootstrap4', function (req, res) {
+	// res.render генерує нам HTML сторінку
+  
+	//            ↙ cюди вводимо назву файлу з сontainer
+	res.render('bootstrap4', {
 		layout: 'basic'
 	})})
 
