@@ -3,20 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - '/task42'
 --}}
 
-<header class='card mt-3'>
 
-  <div class='row g-4'>
-    <nav class='row g-3 col-12'>
-      {{#each navigation.links}}
-        <div class='col-2 text-center'>
-          <a href={{href}} class='btn btn-link' {{#if @last}} disabled {{/if}}> {{text}} </a>
-        {{!-- Не працює неактивне останнє посилання 'Products', не розумію чому --}}
-        </div>
-      {{/each}}
-      </nav>
-    </div>
-
-</header>
 
 <main>
   <nav>
@@ -113,28 +100,8 @@
       <section class='row'>
         {{#each goodsOtherBlock.cards}}
           <div class='col-4 g-4'>
-            <div class='card'>
-              <img src={{image}} alt='' class='card-top-img' />
-              <div class='card-body'>
-                <div class='card-title'>
-                  <b>{{title}}</b>
 
-                  {{#if isHot}}
-                    <span class='badge text-bg-warning rounded-pill'>
-                      HOT
-                    </span>
-                  {{/if}}
-
-                  {{#if isNew}}
-                    <span class='badge text-bg-primary rounded-pill'> 
-                      NEW
-                    </span>
-                  {{/if}}
-
-                </div>
-                <p>{{description}}</p>
-              </div>
-            </div>
+        {{> shopcard}}
 
           </div>
         {{/each}}
@@ -144,35 +111,10 @@
 
   <hr class='my-5' />
 
-  <section class='alert text-bg-success text-center'>
-    {{#with service}}
-      <h2 class=''>{{title}}</h2>
-      <p>{{description}}</p>
-        <a href={{buttons.0.link}} class='btn btn-primary'>
-          {{buttons.0.text}}
-        </a>
-    {{/with}}
-  </section>
 
 
-  <hr class='my-5' />
 
-  <footer class='row'>
-    {{#each footer}}
-      <div class='col-2'>
-        {{#each this}}
-          <nav class='nav'>
-            <a class='nav-link
-            {{#if @last}} disabled{{/if}}
-            ' href={{link}}>{{text}}</a>
 
-          </nav>
-        {{/each}}
-      </div>
-
-    {{/each}}
-
-  </footer>
 
   </div>
 </main>
