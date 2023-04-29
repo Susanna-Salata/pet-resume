@@ -1,0 +1,23 @@
+<div>
+    <ul>
+        {{#each list}}
+            <li>
+                <button {{#if @last}} disabled {{/if}}> {{@index}} {{name}} </button>
+            </li>
+        {{/each}}
+
+<hr>
+
+        {{#each user}}
+            <li>
+                {{@key}}: 
+
+                {{#if value}}
+                    {{value}}
+                {{else}}
+                    {{text}}
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+</div>

@@ -265,7 +265,7 @@ router.get('/work', function (req, res) {
 						name: 'Node.js',
 						},
 					  ],
-					awards: [
+						awards: [
 						{
 							name: "Resume project_1"
 						},
@@ -1642,11 +1642,7 @@ router.get('/bio', function (req, res) {
   
   // ================================================================
 
-<<<<<<< HEAD
-  // ================================================================
 
-
-=======
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/shophome', function (req, res) {
 	// res.render генерує нам HTML сторінку
@@ -1942,6 +1938,40 @@ router.get('/shophome', function (req, res) {
   
   // ================================================================
 
->>>>>>> 2dfb8b57026eb5c39044d81f60decdde69d44005
+  router.get('/list', function (req, res) {
+	// res.render генерує нам HTML сторінку
+  
+	//            ↙ cюди вводимо назву файлу з сontainer
+	res.render('list', {
+		layout: 'basic', 
+
+		list: [
+			{name: 'First Button'},
+			{name: 'Second Button'},
+			{name: 'Error Button'},
+			{name: 'Submit Button'},
+		],
+
+		user: {
+			name: {
+				value: 'Ivan',
+				text: 'Ivanov',
+			},
+			role: {
+				text: 'Admin',
+			},
+			isConfirm: {
+				value: true,
+			},
+			age: {
+				value: 32,
+			},
+		},
+	})
+})
+
+  // ================================================================
+
+
 // Підключаємо роутер до бек-енду
 module.exports = router
