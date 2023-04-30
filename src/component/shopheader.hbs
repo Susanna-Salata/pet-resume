@@ -1,0 +1,13 @@
+<header class='card mt-3'>
+
+  <div class='row g-4'>
+    <nav class='row g-3 col-12'>
+      {{#each navigation.links}}
+        <div class='col-2 text-center'>
+          <a href={{href}} class='btn btn-link' {{#if @last}} disabled {{/if}}> {{text}} </a>
+        {{!-- Не працює неактивне останнє посилання 'Products', не розумію чому --}}
+        </div>
+      {{/each}}
+      </nav>
+    </div>
+</header>
