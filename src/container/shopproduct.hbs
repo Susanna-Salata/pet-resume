@@ -6,16 +6,8 @@
 
 
 <main>
-  <div class='breadcrumb'>
-    {{#each breadcrumb}}
-      {{#if this.url}}
-        <a href='{{this.url}}'>{{this.name}}</a>
-      {{else}}
-        <span>{{this.name}}</span>
-      {{/if}}
-      {{#unless @last}}&nbsp;&raquo;&nbsp;{{/unless}}
-    {{/each}}
-  </div>
+
+{{> breadcrumb}}
 
   <div class='row'>
     <div class='col-md-6'>

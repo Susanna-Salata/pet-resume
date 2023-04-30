@@ -1,0 +1,24 @@
+  <section>
+    <h2 class='text-center'>{{newsOtherBlock.title}}</h2>
+      <div class='row g-2 mt-2'>
+        {{#each newsOtherBlock.cards}}
+          <div class='col-6'>
+            <div class='card text-bg-dark'>
+              <div class='card-header'>
+                <div class='news-card'>
+                  <h6><strong>{{this.title}}</strong>
+                  {{#if this.isTop}}
+                    <span class='badge text-bg-danger rounded-pill'>Top News</span>
+                  {{/if}}
+                  {{#if this.idNew}}
+                    <span class='badge text-bg-success rounded-pill'>New</span>
+                  {{/if}}
+                  </h6>
+                  <p >{{this.description}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+  </section>

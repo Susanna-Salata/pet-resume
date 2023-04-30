@@ -1,0 +1,30 @@
+  <section class='mt-3'>
+    <h2 class='text-center'>
+      <b>{{newsBlock.title}}</b>
+    </h2>
+
+    <div class='row g-2 mt-2'>
+      {{#each newsBlock.cards}}
+        <div class='col-3'>
+          <div class='card text-bg-dark'>
+            <div class='card-header text-center'>
+              <b>{{title}}</b>
+              {{#if isNew}}
+                <span class='badge text-bg-success rounded-pill'> 
+                  New
+                </span>
+              {{/if}}
+
+              {{#if isTop}}
+                <span class='badge text-bg-danger rounded-pill'>
+                    Top
+                  </span>
+              {{/if}}
+            </div>
+            <p class='card-body'>{{description}}</p>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+  </section>
