@@ -6,13 +6,16 @@
 
 
 <main>
-  <nav>
-    <ol class='breadcrumb mt-2'>
-      <li class='breadcrumb-item'><a href='/'>Home</a></li>
-      <li class='breadcrumb-item'><a href='/library/'>Library</a></li>
-      <li class='breadcrumb-item active' aria-current='page'>Data</li>
-    </ol>
-  </nav>
+  <div class='breadcrumb'>
+    {{#each breadcrumb}}
+      {{#if this.url}}
+        <a href='{{this.url}}'>{{this.name}}</a>
+      {{else}}
+        <span>{{this.name}}</span>
+      {{/if}}
+      {{#unless @last}}&nbsp;&raquo;&nbsp;{{/unless}}
+    {{/each}}
+  </div>
 
   <div class='row'>
     <div class='col-md-6'>
