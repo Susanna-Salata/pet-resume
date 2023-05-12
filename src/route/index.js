@@ -2447,7 +2447,7 @@ router.get('/shoporder', function (req, res) {
 			},
 			{
 				text: 'Exit',
-				href: null,
+				href: 'a',
 			},
 		],
 	  },
@@ -2480,7 +2480,7 @@ router.get('/shoporder', function (req, res) {
 			},
 			phone: {
 			  label: 'Мобільний телефон',
-			  placeholder: '+38 (XXX) XXX XX XX',
+			  placeholder: '+38(XXX)XXX-XX-XX',
 			  caption: 'Введіть телефон',
 			},
 			email: {
