@@ -1,0 +1,220 @@
+{{!-- 
+Це код container файлу для task51 сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/task51"
+--}}
+
+<main>
+  <div>
+
+  <section class='row'>
+    <nav class='col-12 nav nav-tabs mb-3'>
+      {{#each goodsBlock.tabs}}
+
+        <a href='#' class='nav-link 
+        {{#if isActive}}active{{/if}}
+        {{#if isDisabled}}
+        text-succesery
+        disabled
+        {{/if}}
+        '>{{text}}</a>
+
+      {{/each}}
+    </nav>
+  </section>
+
+<body>
+  <div class="container">
+    <h1>{{header}}</h1>
+
+<br>
+
+    <h2>{{contacts_data.title}}</h2>
+    
+    {{#each buttons}}
+
+    <div class="row">
+
+      {{#if isPrimary}}
+        <div class="col-md-6">
+          <button class="btn btn-warning text-light">{{text}}</button>
+        </div>
+      {{/if}}
+
+      {{#if isPrimary}}
+        <div class="col-md-6">
+          <button class="btn btn-outline-warning">{{text}}</button>
+        </div>
+      {{/if}}
+    </div>
+
+    {{/each}}
+
+    <form>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="surname">Прізвище</label>
+                <input type="text" class="form-control" id="surname" placeholder="Іванов">
+                <small class="form-text text-muted">Введіть прізвище</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label for="name">Ім’я</label>
+                <input type="text" class="form-control" id="name" placeholder="Іван">
+                <small class="form-text text-muted">Введіть Ім’я</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Мобільний телефон</label>
+            <input type="text" class="form-control" id="phone" placeholder="+38 (XXX) XXX XX XX">
+            <small class="form-text text-muted">Введіть телефон</small>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Пошта</label>
+            <input type="email" class="form-control" id="email" placeholder="ivanivanov@ukr.net">
+            <small class="form-text text-muted">Введіть Пошту</small>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btn btn-success">Швидке замовлення</button>
+          <button class="btn btn-danger">Видалити</button>
+          <button class="btn btn-info">Детальніше</button>
+          
+          <h2>Всього</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Назва</th>
+                <th scope="col">Ціна</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ноут</td>
+                <td>25 000 ₴</td>
+              </tr>
+              <tr>
+                <td>Мишка</td>
+                <td>25 000 ₴</td>
+              </tr>
+              <tr>
+                <td>Клава</td>
+                <td>25 000 ₴</td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <h3>Додаткова інформація</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Всього товарів: 75 000 ₴</li>
+            <li class="list-group-item">Купони: Немає</li>
+            <li class="list-group-item">Доставка: Безкоштовно</li>
+          </ul>
+          
+          <h3>Загальна вартість</h3>
+          <p>Всього товарів: 75 000 ₴</p>
+          
+          <button class="btn btn-primary">Підтвердити замовлення</button>
+          <button class="btn btn-outline-primary">Відмінити купони</button>
+        </div>
+      </div>
+
+    </form>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="newProductInfo">
+        <label class="form-check-label" for="newProductInfo">Отримувати інформацію про новинки</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="discountInfo" checked>
+        <label class="form-check-label" for="discountInfo">Отримувати інформацію про знижки</label>
+      </div>
+    </div>
+
+<br>
+
+    
+    <h2>Доставка</h2>
+    <form>
+      <div class="form-group">
+        <label for="delivery-city">Місто доставки</label>
+        <select class="form-control" id="delivery-city">
+          <option value="1">Київ</option>
+          <option value="2">Харків</option>
+          <option value="3">Одеса</option>
+          <option value="4">Львів</option>
+          <option value="5">Дніпро</option>
+          <option value="6">Донецьк</option>
+        </select>
+      </div>
+
+<br>
+
+    <form>
+      <div class="form-group">
+        <label for="city">Місто доставки</label>
+        <select class="form-control" id="city">
+          <option value="">Оберіть місто доставки</option>
+          <option value="1">Київ</option>
+          <option value="2">Харків</option>
+          <option value="3">Одеса</option>
+          <option value="4">Львів</option>
+          <option value="5">Дніпро</option>
+          <option value="6">Донецьк</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="district">Район доставки</label>
+        <select class="form-control" id="district">
+          <option value="">Оберіть район доставки</option>
+          <option value="1">Голосіївський</option>
+          <option value="2">Оболонський</option>
+          <option value="3">Печерський</option>
+          <option value="4">Дарницький</option>
+          <option value="5">Деснянський</option>
+          <option value="6">Подільський</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="deliveryType">Спосіб доставки</label>
+        <select class="form-control" id="deliveryType">
+          <option value="1">Самовивіз з відділення Нової пошти</option>
+          <option value="2">Кур’єром Нової пошти</option>
+          <option value="3">Самовивіз з магазину</option>
+          <option value="4">Доставка закордон</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="payment">Спосіб оплати</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="payment" id="paymentOnDelivery" value="1">
+          <label class="form-check-label" for="paymentOnDelivery">
+            Оплата при отриманні (За тарифами перевізника)
+          </label>
+        </div>
+
+          <div class="container">
+          </div>
+
+
+  </div>
+</main>
+
+
+
