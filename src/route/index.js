@@ -2561,7 +2561,10 @@ router.get('/shoporder', function (req, res) {
 			],
 		  },
 		],
-		delivery_type: [
+		delivery_type: {
+			label: 'Спосіб доставки',
+			placeholder: 'Оберіть спосіб доставки',
+			options: [
 		  {
 			type: 'Самовивіз з відділення Нової пошти',
 		  },
@@ -2575,6 +2578,7 @@ router.get('/shoporder', function (req, res) {
 			type: 'Доставка закордон',
 		  },
 		],
+		},
 		payment: {
 		  title: 'Оплата',
 		  list: [

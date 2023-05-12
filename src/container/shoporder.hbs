@@ -1,6 +1,6 @@
 {{!-- 
-Це код container файлу для task51 сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/task51"
+Це код container файлу для shoporder сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/shoporder"
 --}}
 
 <main>
@@ -107,45 +107,40 @@
         <label for="city">{{0.label}}</label>
         <select class="form-select" id="city">
           <option value="">{{0.placeholder}}</option>
-          <option value="1">{{options.text}}</option>
-          <option value="2">Харків</option>
-          <option value="3">Одеса</option>
-          <option value="4">Львів</option>
-          <option value="5">Дніпро</option>
-          <option value="6">Донецьк</option>
+
+          {{#each 0.options}}
+            <option value="{{value}}">{{text}}</option>
+          {{/each}}
+
         </select>
       </div>
 
       <div class="form-control mt-2" >
         <label for="district">{{1.label}}</label>
         <select class="form-select" id="district">
-          <option value="">Оберіть район доставки</option>
-          <option value="1">Голосіївський</option>
-          <option value="2">Оболонський</option>
-          <option value="3">Печерський</option>
-          <option value="4">Дарницький</option>
-          <option value="5">Деснянський</option>
-          <option value="6">Подільський</option>
+          <option value="">{{1.placeholder}}</option>
+
+          {{#each 1.options}}
+            <option value="{{value}}">{{text}}</option>
+          {{/each}}
+
         </select>
       </div>
   </form>
 {{/with}}
 
-{{#with delivery}}
+{{#with delivery.delivery_type}}
   <form>
       <div class="form-control mt-2" >
 
-        <label for="deliveryType">{{delivery_type}}</label>
+        <label for="deliveryType">{{label}}</label>
         <select class="form-select" id="deliveryType">
+          <option value="">{{placeholder}}</option>
 
-          {{!-- {{#each delivery.delivery_type.options}}
-            <option value="{{value}}">{{text}}</option>
-          {{/each}} --}}
+          {{#each options}}
+            <option value="{{value}}">{{type}}</option>
+          {{/each}}
 
-          <option value="1">Самовивіз з відділення Нової пошти</option>
-          <option value="2">Кур’єром Нової пошти</option>
-          <option value="3">Самовивіз з магазину</option>
-          <option value="4">Доставка закордон</option>
         </select>
       </div>
   </form>
@@ -160,25 +155,26 @@
 
   <div class="row">
     <div class="col-md-8">
-      <h2 class="mt-2">Jgkfnf</h2>
-      <div>
-        <div class="form-group">
-          
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="payment" id="paymentOnDelivery" value="1">
-            <label class="form-check-label" for="paymentOnDelivery">
-              {{payment.list.type}} {{payment.list.descriprion}}
-            </label>
-          </div>
-            
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="payment" id="paymentOnDelivery" value="1">
-            <label class="form-check-label" for="paymentOnDelivery">
-              Оплата зараз 
-            </label>
+      {{#with delivery.payment}}
+        <h2 class="mt-2"> {{title}} </h2>
+        <div>
+          <div class="form-group">
+            <div class="form-check">
+              
+              {{#each list}}
+              <div>
+                <input class="form-check-input" type="radio" >{{type}}</input>
+                <label class="form-check-label">
+                   {{description}}
+                </label>
+              </div>
+              {{/each}}
+
+            </div>
+
           </div>
         </div>
-      </div>
+      {{/with}}
     </div>
   </div>
 </div>
